@@ -1,23 +1,16 @@
-var cool = require('cool-ascii-faces');
-var express = require('express');
-var app = express();
+var http = require('http');
+var util = require('util')
+http.createServer(function (req, res) {
 
-app.set('port', (process.env.PORT || 3000));
+    console.log('Request received: ');
+    util.log(util.inspect(req)) // this line helps you inspect the request so you can see whether the data is in the url (GET) or the req body (POST)
+    util.log('Request recieved: \nmethod: ' + req.method + '\nurl: ' + req.url) // this line logs just the method and url
 
-app.use(express.static(__dirname + '/public'));
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    req.on('data', function (chunk) {
+        console.log('GOT DATA!');
+    });
+    res.end('callback(\'{\"msg\": \"OK\"}\')');
 
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  response.render('pages/index')
-});
-
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+}).listen(8200);
+console.log('Server running on port 8200');
