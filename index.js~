@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
     req.on('data', function (chunk) {
         console.log('GOT DATA!');
     });
-    res.end('callback(\'{\"msg\": \"OK\"}\')');
+    res.end(returnObjectString);
 
 }).listen(8200);
 console.log('Server running on port 8200');

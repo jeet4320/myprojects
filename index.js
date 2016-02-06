@@ -12,6 +12,7 @@ http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     req.on('data', function (chunk) {
         console.log('GOT DATA!');
+	
     });
     res.end(returnObjectString);
 
