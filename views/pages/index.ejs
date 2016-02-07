@@ -2,6 +2,10 @@
   <head>
     <title>Simple login</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
     <script>
       $(document).ready(function(){
         var user,pass;
@@ -10,15 +14,85 @@
           pass=$("#password").val();
           $.post("https://webdatacse5335jeet.herokuapp.com/login",{user: user,password: pass}, function(data){
             alert(data);
+
+            var serverdata = $("#serverdata");
+                    serverdata.empty();
+
+
+                    $.each(data, function(key, info) {
+                        var row = $("<tr></tr>");
+
+                        //alert(JSON.stringify(user));
+
+                        var DailyWeekly = $("<td>info.name</td>");
+
+                        DailyWeekly.appendTo(row);
+
+
+                        row.appendTo(serverdata);
+
+                    });
+
+
           });
         });
       });
     </script>
   </head>
   <body>
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand bold center">Web Data Management Class !!!</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/">Home</a></li>
+            </ul>
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+  <button type="button" class="btn btn-primary" id="submit" style="margin-top: 60px;margin-left:50px;">Get JSON data from Server</button>
+
+
+<div class="container hidden"  style="margin-top: 50px;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Data received from Server:</h3>
+        </div>
+
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>phone</th>
+                    <th>DOB</th>
+                    <th>company</th>
+                    <th>job-type</th>
+                    <th>school</th>
+                    <th>gpa</th>
+                    <th>research interests</th>
+                    <th>degree</th>
+                    <th>major</th>
+                    <th>gender</th>
+                    <th>address</th>
+                    <th>longitude</th>
+                    <th>latitude</th>
+                </tr>
+                </thead>
+                <tbody id="serverdata">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
     <h1>Hello people !</h1>
     <input type="TEXT" id="user" size="40"><br>
     <input type="password" id="password" size="40"><br>
-    <input type="button" id="submit" value="Submit">
+
   </body>
 </html>

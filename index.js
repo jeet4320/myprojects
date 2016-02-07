@@ -16,11 +16,56 @@ app.set('view engine', 'ejs');
 app.get('/',function(req,res){
   res.render('pages/index');
 });
+
 app.post('/login',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
+  var json = [{ "name"   : "Alice Brown",
+  "phone"    : "8171234562",
+  "DOB"  : "02/02/1985",
+  "company"  : "Intel",
+  "job-type"  : "full time",
+  "school"  : "University of Texas Arlington",
+  "gpa"  : 3.6,
+  "research interests"  : "Big data",
+  "degree"  : "Masters in Computer Science",
+  "major"  : "Computer Science",
+  "gender"  : "Male",
+  "nationality"  : "Indian",
+  "address": {
+        "street_address": "955 Benge Drive",
+        "city": "Arlington",
+        "state": "Texas",
+        "zip": "76013"
+        },
+  "longitude": 6.11499,
+  "latitude": 50.76891
+},
+{ "name"   : "Alice1 Brown1",
+  "phone"    : "8171234562",
+  "DOB"  : "02/02/1985",
+  "company"  : "Intel",
+  "job-type"  : "full time",
+  "school"  : "University of Texas Arlington",
+  "gpa"  : 3.6,
+  "research interests"  : "Big data",
+  "degree"  : "Masters in Computer Science",
+  "major"  : "Computer Science",
+  "gender"  : "Male",
+  "nationality"  : "Indian",
+  "address": {
+        "street_address": "955 Benge Drive",
+        "city": "Arlington",
+        "state": "Texas",
+        "zip": "76013"
+        },
+  "longitude": 6.11499,
+  "latitude": 50.76891
+}]
+
+
   console.log("User name = "+user_name+", password is "+password);
-  res.end("Done");
+  res.end(json);
 });
 
 app.listen(app.get('port'), function() {
