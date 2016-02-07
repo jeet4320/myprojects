@@ -1,11 +1,14 @@
-var http = require('http');
-var util = require('util')
-http.createServer(function (req, res) {
+var express = require('express');
 
-    console.log('Request received: ');
-    util.log(util.inspect(req)) // this line helps you inspect the request so you can see whether the data is in the url (GET) or the req body (POST)
-    util.log('Request recieved: \nmethod: ' + req.method + '\nurl: ' + req.url) // this line logs just the method and url
+var app = express.createServer();
+app.use(express.bodyParser());
 
+app.get('/', function(request, response) {
+  response.render('pages/index');
+});
+
+app.post('/search', function(req, res){
+   
     var returnObject = {message: "Hello World!"};
     var returnObjectString = JSON.stringify(returnObject);
     
@@ -16,5 +19,6 @@ http.createServer(function (req, res) {
     });
     res.end(returnObjectString);
 
-}).listen(8200);
-console.log('Server running on port 8200');
+});
+
+app.listen(8200);
