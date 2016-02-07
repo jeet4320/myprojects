@@ -12,7 +12,7 @@
           user=$("#user").val();
           pass=$("#password").val();
           $.post("https://webdatacse5335jeet.herokuapp.com/login",{user: user,password: pass}, function(data){
-            alert(data);
+            //alert(data);
 
             var serverdata = $("#serverdata");
                     serverdata.empty();
@@ -21,11 +21,25 @@
                     $.each(data, function(key, info) {
                         var row = $("<tr></tr>");
 
-                        alert(key);
-                        alert(info);
+                        //alert(key);
+                        //alert(info);
                         //alert(JSON.stringify(user));
 
                         var name = $("<td>"+info.name+"</td>");
+                        var name = $("<td>"+info.phone+"</td>");
+                        var name = $("<td>"+info.DOB+"</td>");
+                        var name = $("<td>"+info.company+"</td>");
+                        var name = $("<td>"+info.jobtype+"</td>");
+                        var name = $("<td>"+info.school+"</td>");
+                        var name = $("<td>"+info.gpa+"</td>");
+                        var name = $("<td>"+info.researchinterests+"</td>");
+                        var name = $("<td>"+info.degree+"</td>");
+                        var name = $("<td>"+info.major+"</td>");
+                        var name = $("<td>"+info.gender+"</td>");
+                        var name = $("<td>"+info.nationality+"</td>");
+                        var name = $("<td>"+info.address+"</td>");
+                        var name = $("<td>"+info.longitude+"</td>");
+                        var name = $("<td>"+info.latitude+"</td>");
 
                         name.appendTo(row);
 
@@ -33,7 +47,7 @@
                         row.appendTo(serverdata);
 
                     });
-              //$('containerdiv').show();
+              $('containerdiv').show();
 
 
           });
@@ -55,10 +69,10 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-  <button type="button" class="btn btn-primary" id="submit" style="margin-top: 60px;margin-left:50px;">Get JSON data from Server</button>
+  <button type="button" class="btn btn-primary" id="submit" style="margin-top: 70px;margin-left:50px;">Get JSON data from Server</button>
 
 
-<div class="container" id="containerdiv" style="margin-top: 50px;">
+<div class="container" id="containerdiv" hidden="true" style="margin-top: 50px;">
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Data received from Server:</h3>
@@ -69,19 +83,19 @@
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th>phone</th>
+                    <th>Phone</th>
                     <th>DOB</th>
-                    <th>company</th>
-                    <th>job-type</th>
-                    <th>school</th>
-                    <th>gpa</th>
-                    <th>research interests</th>
-                    <th>degree</th>
-                    <th>major</th>
-                    <th>gender</th>
-                    <th>address</th>
-                    <th>longitude</th>
-                    <th>latitude</th>
+                    <th>Company</th>
+                    <th>Job-type</th>
+                    <th>School</th>
+                    <th>GPA</th>
+                    <th>Research interests</th>
+                    <th>Degree</th>
+                    <th>Major</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Longitude</th>
+                    <th>Latitude</th>
                 </tr>
                 </thead>
                 <tbody id="serverdata">
