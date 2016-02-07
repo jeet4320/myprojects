@@ -19,9 +19,9 @@
 $(document).ready(function() {
 
 $( "#target" ).click(function() {
-  
+  alert("jeet");
     $.ajax({
-        url: 'http://127.0.0.1:8200/ms',
+        url: 'http://127.0.0.1:8200/search',
         // dataType: "jsonp",
         data: '{"data": "TEST"}',
         type: 'POST',
