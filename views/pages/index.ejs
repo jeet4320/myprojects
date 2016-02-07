@@ -17,7 +17,6 @@
             var serverdata = $("#serverdata");
                     serverdata.empty();
 
-
                     $.each(data, function(key, info) {
                         var row = $("<tr></tr>");
 
@@ -26,29 +25,40 @@
                         //alert(JSON.stringify(user));
 
                         var name = $("<td>"+info.name+"</td>");
-                        var name = $("<td>"+info.phone+"</td>");
-                        var name = $("<td>"+info.DOB+"</td>");
-                        var name = $("<td>"+info.company+"</td>");
-                        var name = $("<td>"+info.jobtype+"</td>");
-                        var name = $("<td>"+info.school+"</td>");
-                        var name = $("<td>"+info.gpa+"</td>");
-                        var name = $("<td>"+info.researchinterests+"</td>");
-                        var name = $("<td>"+info.degree+"</td>");
-                        var name = $("<td>"+info.major+"</td>");
-                        var name = $("<td>"+info.gender+"</td>");
-                        var name = $("<td>"+info.nationality+"</td>");
-                        var name = $("<td>"+info.address+"</td>");
-                        var name = $("<td>"+info.longitude+"</td>");
-                        var name = $("<td>"+info.latitude+"</td>");
+                        var phone = $("<td>"+info.phone+"</td>");
+                        var DOB = $("<td>"+info.DOB+"</td>");
+                        var company = $("<td>"+info.company+"</td>");
+                        var jobtype = $("<td>"+info.jobtype+"</td>");
+                        var school = $("<td>"+info.school+"</td>");
+                        var gpa = $("<td>"+info.gpa+"</td>");
+                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
+                        var degree = $("<td>"+info.degree+"</td>");
+                        var major = $("<td>"+info.major+"</td>");
+                        var gender = $("<td>"+info.gender+"</td>");
+                        var nationality = $("<td>"+info.nationality+"</td>");
+                        var address = $("<td>"+info.address+"</td>");
+                        var longitude = $("<td>"+info.longitude+"</td>");
+                        var latitude = $("<td>"+info.latitude+"</td>");
 
                         name.appendTo(row);
-
+                        phone.appendTo(row);
+                        DOB.appendTo(row);
+                        company.appendTo(row);
+                        jobtype.appendTo(row);
+                        school.appendTo(row);
+                        gpa.appendTo(row);
+                        researchinterests.appendTo(row);
+                        degree.appendTo(row);
+                        major.appendTo(row);
+                        gender.appendTo(row);
+                        nationality.appendTo(row);
+                        address.appendTo(row);
+                        longitude.appendTo(row);
+                        latitude.appendTo(row);
 
                         row.appendTo(serverdata);
 
                     });
-
-
 
           });
         });
