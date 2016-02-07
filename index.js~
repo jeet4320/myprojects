@@ -6,7 +6,7 @@ http.createServer(function (req, res) {
 
 switch(req.url) {
     case '/':
-      response.render('pages/index');
+      res.render('pages/index');
       break;
     case '/formhandler':
       console.log('Request received: ');
