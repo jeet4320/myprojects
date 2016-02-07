@@ -1,6 +1,6 @@
 var http = require('http');
 var util = require('util')
-http.createServer(function (req, res) {
+http.createServer('ms',function (req, res) {
 
     console.log('Request received: ');
     util.log(util.inspect(req)) // this line helps you inspect the request so you can see whether the data is in the url (GET) or the req body (POST)
