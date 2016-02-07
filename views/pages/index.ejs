@@ -13,7 +13,7 @@
           pass=$("#password").val();
           $.post("https://webdatacse5335jeet.herokuapp.com/login",{user: user,password: pass}, function(data){
             //alert(data);
-
+            $('#containerdiv').show();
             var serverdata = $("#serverdata");
                     serverdata.empty();
 
@@ -47,7 +47,7 @@
                         row.appendTo(serverdata);
 
                     });
-              $('containerdiv').show();
+
 
 
           });
