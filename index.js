@@ -13,6 +13,7 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.use(express.bodyParser());
 
 app.post('/search', function(req, res){
    
