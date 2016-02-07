@@ -4,6 +4,8 @@ var util = require('util');
 http.createServer(function (req, res) {
 
 switch(req.url) {
+    case '/':
+      res.redirect('views/pages/index.ejs')
     case '/formhandler':
       console.log('Request received: ');
      
