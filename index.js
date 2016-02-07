@@ -61,7 +61,7 @@ app.post('/login',function(req,res){
         },
   "longitude": 6.11499,
   "latitude": 50.76891
-}]
+}];
 
 
   console.log("User name = "+user_name+", password is "+password);
