@@ -25,15 +25,15 @@
                         alert(info);
                         //alert(JSON.stringify(user));
 
-                        var DailyWeekly = $("<td>info.name</td>");
+                        var name = $("<td>info.name</td>");
 
-                        DailyWeekly.appendTo(row);
+                        name.appendTo(row);
 
 
                         row.appendTo(serverdata);
 
                     });
-              $('fullcontainer').show();
+              $('containerdiv').show();
 
 
           });
@@ -58,7 +58,7 @@
   <button type="button" class="btn btn-primary" id="submit" style="margin-top: 60px;margin-left:50px;">Get JSON data from Server</button>
 
 
-<div class="container hidden" id="fullcontainer"  style="margin-top: 50px;">
+<div class="container" id="containerdiv" hidden="true" style="margin-top: 50px;">
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Data received from Server:</h3>
