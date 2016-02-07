@@ -65,7 +65,9 @@ app.post('/login',function(req,res){
 
 
   console.log("User name = "+user_name+", password is "+password);
-  res.end(json);
+  res.contentType('application/json');
+  res.send(JSON.stringify(json));
+  //  res.end(json);
 });
 
 app.listen(app.get('port'), function() {
