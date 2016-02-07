@@ -22,11 +22,3 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.post('handle',function(request,response){
-     
-      var returnObject = {message: "Hello World!"};
-      var returnObjectString = JSON.stringify(returnObject);
-    
-     
-    res.end(returnObjectString);
-});
