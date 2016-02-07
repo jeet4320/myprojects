@@ -1,6 +1,23 @@
+var express = require('express');
+var app = express();
 var http = require('http');
 var util = require('util')
-http.createServer(function (req, res) {
+
+app.set('port', (process.env.PORT || 8200));
+
+app.use(express.static(__dirname + '/public'));
+
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+
+app.get('/', function(request, response) {
+  response.render('pages/index');
+});
+
+
+http.createServer('/message',function (req, res) {
 
     console.log('Request received: ');
     util.log(util.inspect(req)) // this line helps you inspect the request so you can see whether the data is in the url (GET) or the req body (POST)
@@ -16,5 +33,5 @@ http.createServer(function (req, res) {
     });
     res.end(returnObjectString);
 
-}).listen(5000);
+}).listen(8200);
 console.log('Server running on port 8200');

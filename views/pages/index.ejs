@@ -8,10 +8,20 @@
 <p> Hi All </p>
 <p id="lblResponse">fill me in</p>
 
+<div id="target">
+  Click here
+</div>
+<div id="other">
+  Trigger the handler
+</div>
+
 <script type="text/javascript">
 $(document).ready(function() {
+
+$( "#target" ).click(function() {
+  
     $.ajax({
-        url: 'https://webdatacse5335jeet.herokuapp.com/',
+        url: 'http://127.0.0.1:8200/message',
         // dataType: "jsonp",
         data: '{"data": "TEST"}',
         type: 'POST',
@@ -26,6 +36,8 @@ $(document).ready(function() {
             $('#lblResponse').html('Error connecting to the server.');
         },
     });
+});
+
 });
 </script>
 
