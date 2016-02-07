@@ -4,7 +4,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 
     <script>
       $(document).ready(function(){
@@ -22,6 +21,8 @@
                     $.each(data, function(key, info) {
                         var row = $("<tr></tr>");
 
+                        alert(key);
+                        alert(info);
                         //alert(JSON.stringify(user));
 
                         var DailyWeekly = $("<td>info.name</td>");
@@ -32,6 +33,7 @@
                         row.appendTo(serverdata);
 
                     });
+              $('fullcontainer').show();
 
 
           });
@@ -56,7 +58,7 @@
   <button type="button" class="btn btn-primary" id="submit" style="margin-top: 60px;margin-left:50px;">Get JSON data from Server</button>
 
 
-<div class="container hidden"  style="margin-top: 50px;">
+<div class="container hidden" id="fullcontainer"  style="margin-top: 50px;">
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Data received from Server:</h3>
