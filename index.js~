@@ -18,13 +18,16 @@ app.listen(app.get('port'), function() {
 });
 
 app.post('handle',function(request,response){
-var returnObject = {message: "Hello World!"};
+     
+      var returnObject = {message: "Hello World!"};
       var returnObjectString = JSON.stringify(returnObject);
     
       res.writeHead(200, { 'Content-Type': 'text/plain' });
       req.on('data', function (chunk) {
       console.log('GOT DATA!');
+	
+    });
+    res.end(returnObjectString);
 });
-
 
 
