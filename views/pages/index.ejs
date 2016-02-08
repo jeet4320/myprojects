@@ -40,15 +40,11 @@
                         var city;
                         var state;
                         var zip;
+                        street_address = $("<td>"+info.address.street_address+"</td>");
+                            city = $("<td>"+info.address.city+"</td>");
+                            state = $("<td>"+info.address.state+"</td>");
+                            zip = $("<td>"+info.address.zip+"</td>");
 
-
-                        $.each(info.address, function(key1, add) {
-                            street_address = $("<td>"+add.street_address+"</td>");
-                            city = $("<td>"+add.city+"</td>");
-                            state = $("<td>"+add.state+"</td>");
-                            zip = $("<td>"+add.zip+"</td>");
-
-                        });
 
                         var address = $("<td>"+street_address+" "+city+" "+state+" "+zip+"</td>");
 
