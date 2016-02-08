@@ -40,8 +40,12 @@
                         var city;
                         var state;
                         var zip;
+                        var a = JSON.stringify(info.address);
+                        alert(a);
+                        alert(a.city);
+                        alert(a['city']);
                         street_address = $("<td>"+info.address['street_address']+"</td>");
-                            city = $("<td>"+info.address[0].city+"</td>");
+                            city = $("<td>"+info.address.city+"</td>");
                             state = $("<td>"+info.address.state+"</td>");
                             zip = $("<td>"+info.address.zip+"</td>");
 
