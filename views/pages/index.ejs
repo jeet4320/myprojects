@@ -1,31 +1,28 @@
 <html>
-  <head>
+<head>
     <title>Simple login</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <script>
-      $(document).ready(function(){
-        var user,pass;
-        $("#submit").click(function(){
-          user=$("#user").val();
-          pass=$("#password").val();
-          $.post("https://cse5335-jsp9739.herokuapp.com/login",{user: user,password: pass}, function(data){
-            //alert(data);
-            $('#containerdiv').show();
-            var serverdata = $("#serverdata");
+        $(document).ready(function(){
+
+            $("#submit").click(function(){
+
+                $.post("https://cse5335-jsp9739.herokuapp.com/login", function(data){
+
+                    $('#containerdiv').show();
+                    var serverdata = $("#serverdata");
                     serverdata.empty();
-              //alert(data);
-              alert(JSON.stringify(data));
-                var json = JSON.stringify(data);
-              json = JSON.parse(json);
-                json = json.students;
+
+
+                    var json = JSON.stringify(data);
+                    json = JSON.parse(json);
+                    json = json.students;
 
                     $.each(json, function(key, info) {
                         var row = $("<tr></tr>");
-alert(info.name);
-                        alert(info.address.city);
 
 
                         var name = $("<td>"+info.name+"</td>");
@@ -66,16 +63,16 @@ alert(info.name);
 
                     });
 
-          });
+                });
+            });
         });
-      });
     </script>
-  </head>
-  <body>
-  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-        <a class="navbar-brand bold center">Web Data Management Class !!!</a>
+            <a class="navbar-brand bold center">Web Data Management Class !!!</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -85,7 +82,7 @@ alert(info.name);
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-  <button type="button" class="btn btn-primary" id="submit" style="margin-top: 70px;margin-left:50px;">Get JSON data from Server</button>
+<button type="button" class="btn btn-primary" id="submit" style="margin-top: 70px;margin-left:50px;">Get JSON data from Server</button>
 
 
 <div class="container" id="containerdiv" hidden="true" style="margin-top: 50px;">
@@ -121,6 +118,6 @@ alert(info.name);
     </div>
 </div>
 
-  </body>
+</body>
 </html>
 
