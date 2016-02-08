@@ -22,12 +22,12 @@
               json = JSON.parse(json);
                 json = json.students;
                 alert(json);
-//                    $.each(data, function(key, info) {
-//                        var row = $("<tr></tr>");
+              alert(JSON.parse(JSON.stringify(json)));
+                    $.each(json, function(key, info) {
+                        var row = $("<tr></tr>");
+alert(info.name);
+                        alert(info.address.city);
 //
-//                        //alert(key);
-//                        //alert(info);
-//                        //alert(JSON.stringify(user));
 //
 //                        var name = $("<td>"+info.name+"</td>");
 //                        var phone = $("<td>"+info.phone+"</td>");
@@ -79,8 +79,8 @@
 //                        //latitude.appendTo(row);
 //
 //                        row.appendTo(serverdata);
-//
-//                    });
+
+                    });
 
           });
         });

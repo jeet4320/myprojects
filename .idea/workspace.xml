@@ -37,9 +37,11 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3664495">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-              <folding />
+            <state vertical-scroll-proportion="0.4869707">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+              <folding>
+                <marker date="1454902841486" expanded="true" signature="1141:3758" placeholder="//..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -382,7 +384,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1454902841486" expanded="true" signature="1141:3758" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -398,7 +402,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1454902841486" expanded="true" signature="1141:3758" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -412,9 +418,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3664495">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="0.4869707">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <marker date="1454902841486" expanded="true" signature="1141:3758" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
