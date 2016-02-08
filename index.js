@@ -20,6 +20,13 @@ app.get('/',function(req,res){
 app.post('/login',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
+
+    var myObject = new Object();
+    myObject.name = "John";
+    myObject.phone = 12;
+    myObject.address = {"street_address": "955 Benge Drive","city": "Arlington","state": "Texas", "zip": "76013"};
+    var myString = JSON.stringify(myObject);
+
   var json = [{ "name"   : "Alice Brown",
   "phone"    : "8171234562",
   "DOB"  : "02/02/1985",
@@ -66,7 +73,7 @@ app.post('/login',function(req,res){
 
   console.log("User name = "+user_name+", password is "+password);
   res.contentType('application/json');
-  res.send(JSON.stringify(json));
+  res.send(JSON.stringify(myObject));
   //  res.end(json);
 });
 

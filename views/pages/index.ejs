@@ -16,7 +16,9 @@
             $('#containerdiv').show();
             var serverdata = $("#serverdata");
                     serverdata.empty();
+              alert(data);
               var json = JSON.parse(data);
+              alert(json);
 
                     $.each(json, function(key, info) {
                         var row = $("<tr></tr>");
@@ -27,16 +29,16 @@
 
                         var name = $("<td>"+info.name+"</td>");
                         var phone = $("<td>"+info.phone+"</td>");
-                        var DOB = $("<td>"+info.DOB+"</td>");
-                        var company = $("<td>"+info.company+"</td>");
-                        var jobtype = $("<td>"+info.jobtype+"</td>");
-                        var school = $("<td>"+info.school+"</td>");
-                        var gpa = $("<td>"+info.gpa+"</td>");
-                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
-                        var degree = $("<td>"+info.degree+"</td>");
-                        var major = $("<td>"+info.major+"</td>");
-                        var gender = $("<td>"+info.gender+"</td>");
-                        var nationality = $("<td>"+info.nationality+"</td>");
+//                        var DOB = $("<td>"+info.DOB+"</td>");
+//                        var company = $("<td>"+info.company+"</td>");
+//                        var jobtype = $("<td>"+info.jobtype+"</td>");
+//                        var school = $("<td>"+info.school+"</td>");
+//                        var gpa = $("<td>"+info.gpa+"</td>");
+//                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
+//                        var degree = $("<td>"+info.degree+"</td>");
+//                        var major = $("<td>"+info.major+"</td>");
+//                        var gender = $("<td>"+info.gender+"</td>");
+//                        var nationality = $("<td>"+info.nationality+"</td>");
                         var street_address;
                         var city;
                         var state;
@@ -60,16 +62,16 @@
 
                         name.appendTo(row);
                         phone.appendTo(row);
-                        DOB.appendTo(row);
-                        company.appendTo(row);
-                        jobtype.appendTo(row);
-                        school.appendTo(row);
-                        gpa.appendTo(row);
-                        researchinterests.appendTo(row);
-                        degree.appendTo(row);
-                        major.appendTo(row);
-                        gender.appendTo(row);
-                        nationality.appendTo(row);
+//                        DOB.appendTo(row);
+//                        company.appendTo(row);
+//                        jobtype.appendTo(row);
+//                        school.appendTo(row);
+//                        gpa.appendTo(row);
+//                        researchinterests.appendTo(row);
+//                        degree.appendTo(row);
+//                        major.appendTo(row);
+//                        gender.appendTo(row);
+//                        nationality.appendTo(row);
                         address.appendTo(row);
                         //longitude.appendTo(row);
                         //latitude.appendTo(row);
