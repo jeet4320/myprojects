@@ -16,9 +16,11 @@
             $('#containerdiv').show();
             var serverdata = $("#serverdata");
                     serverdata.empty();
-              alert(data);
+              //alert(data);
               alert(JSON.stringify(data));
-
+                var json = JSON.stringify(data);
+                json = json.students;
+                alert(json);
 //                    $.each(data, function(key, info) {
 //                        var row = $("<tr></tr>");
 //
