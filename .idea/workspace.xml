@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d03a4c2-9144-4480-b8a5-aff65a52f8c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/index.ejs" afterPath="$PROJECT_DIR$/views/pages/index.ejs" />
-    </list>
+    <list default="true" id="1d03a4c2-9144-4480-b8a5-aff65a52f8c5" name="Default" comment="" />
     <ignored path="node-js-getting-started.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
