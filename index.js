@@ -21,11 +21,60 @@ app.post('/login',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
 
-    var myObject = new Object();
-    myObject.name = "John";
-    myObject.phone = 12;
-    myObject.address = {"street_address": "955 Benge Drive","city": "Arlington","state": "Texas", "zip": "76013"};
-    var myString = JSON.stringify(myObject);
+    //var myObject = new Object();
+    //myObject.name = "John";
+    //myObject.phone = 12;
+    //myObject.address = {"street_address": "955 Benge Drive","city": "Arlington","state": "Texas", "zip": "76013"};
+    //var myString = JSON.stringify(myObject);
+
+
+    var jj = {
+    "students":[{
+              "name"   : "Alice Brown",
+              "phone"    : "8171234562",
+              "DOB"  : "02/02/1985",
+              "company"  : "Intel",
+              "jobtype"  : "Full time",
+              "school"  : "UTA",
+              "gpa"  : 3.6,
+              "researchinterests"  : "Big data",
+              "degree"  : "MS in Computer Science",
+              "major"  : "Computer Science",
+              "gender"  : "Male",
+              "nationality"  : "Indian",
+              "address": {
+                    "street_address": "955 Benge Drive",
+                    "city": "Arlington",
+                    "state": "Texas",
+                    "zip": "76013"
+                    },
+              "longitude": 6.11499,
+              "latitude": 50.76891
+        },
+        {
+              "name"   : "Alice1 Brown1",
+              "phone"    : "8171234562",
+              "DOB"  : "02/02/1985",
+              "company"  : "Intel",
+              "jobtype"  : "Full time",
+              "school"  : "UTA",
+              "gpa"  : 3.6,
+              "researchinterests"  : "Big data",
+              "degree"  : "MS in Computer Science",
+              "major"  : "Computer Science",
+              "gender"  : "Male",
+              "nationality"  : "Indian",
+              "address": {
+                    "street_address": "955 Benge Drive",
+                    "city": "Arlington",
+                    "state": "Texas",
+                    "zip": "76013"
+                    },
+              "longitude": 6.11499,
+              "latitude": 50.76891
+        }
+    ]
+};
 
   var json = [{ "name"   : "Alice Brown",
   "phone"    : "8171234562",
@@ -73,7 +122,7 @@ app.post('/login',function(req,res){
 
   console.log("User name = "+user_name+", password is "+password);
   res.contentType('application/json');
-  res.send(JSON.stringify(myObject));
+  res.send(JSON.stringify(jj));
   //  res.end(json);
 });
 

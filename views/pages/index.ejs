@@ -17,68 +17,67 @@
             var serverdata = $("#serverdata");
                     serverdata.empty();
               alert(data);
-              var json = JSON.parse(data);
-              alert(json);
+              alert(JSON.stringify(data));
 
-                    $.each(json, function(key, info) {
-                        var row = $("<tr></tr>");
-
-                        //alert(key);
-                        //alert(info);
-                        //alert(JSON.stringify(user));
-
-                        var name = $("<td>"+info.name+"</td>");
-                        var phone = $("<td>"+info.phone+"</td>");
-//                        var DOB = $("<td>"+info.DOB+"</td>");
-//                        var company = $("<td>"+info.company+"</td>");
-//                        var jobtype = $("<td>"+info.jobtype+"</td>");
-//                        var school = $("<td>"+info.school+"</td>");
-//                        var gpa = $("<td>"+info.gpa+"</td>");
-//                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
-//                        var degree = $("<td>"+info.degree+"</td>");
-//                        var major = $("<td>"+info.major+"</td>");
-//                        var gender = $("<td>"+info.gender+"</td>");
-//                        var nationality = $("<td>"+info.nationality+"</td>");
-                        var street_address;
-                        var city;
-                        var state;
-                        var zip;
-                        var a = JSON.stringify(info.address);
-                        alert(a);
-                        alert(a.city);
-                        alert(a['city']);
-                        street_address = $("<td>"+info.address['street_address']+"</td>");
-                            city = $("<td>"+info.address.city+"</td>");
-                            state = $("<td>"+info.address.state+"</td>");
-                            zip = $("<td>"+info.address.zip+"</td>");
-
-
-
-                        var address = $("<td>"+street_address+" "+city+" "+state+" "+zip+"</td>");
-
-
-                        var longitude = $("<td>"+info.longitude+"</td>");
-                        var latitude = $("<td>"+info.latitude+"</td>");
-
-                        name.appendTo(row);
-                        phone.appendTo(row);
-//                        DOB.appendTo(row);
-//                        company.appendTo(row);
-//                        jobtype.appendTo(row);
-//                        school.appendTo(row);
-//                        gpa.appendTo(row);
-//                        researchinterests.appendTo(row);
-//                        degree.appendTo(row);
-//                        major.appendTo(row);
-//                        gender.appendTo(row);
-//                        nationality.appendTo(row);
-                        address.appendTo(row);
-                        //longitude.appendTo(row);
-                        //latitude.appendTo(row);
-
-                        row.appendTo(serverdata);
-
-                    });
+//                    $.each(data, function(key, info) {
+//                        var row = $("<tr></tr>");
+//
+//                        //alert(key);
+//                        //alert(info);
+//                        //alert(JSON.stringify(user));
+//
+//                        var name = $("<td>"+info.name+"</td>");
+//                        var phone = $("<td>"+info.phone+"</td>");
+////                        var DOB = $("<td>"+info.DOB+"</td>");
+////                        var company = $("<td>"+info.company+"</td>");
+////                        var jobtype = $("<td>"+info.jobtype+"</td>");
+////                        var school = $("<td>"+info.school+"</td>");
+////                        var gpa = $("<td>"+info.gpa+"</td>");
+////                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
+////                        var degree = $("<td>"+info.degree+"</td>");
+////                        var major = $("<td>"+info.major+"</td>");
+////                        var gender = $("<td>"+info.gender+"</td>");
+////                        var nationality = $("<td>"+info.nationality+"</td>");
+//                        var street_address;
+//                        var city;
+//                        var state;
+//                        var zip;
+//                        var a = JSON.stringify(info.address);
+//                        alert(a);
+//                        alert(a.city);
+//                        alert(a['city']);
+//                        street_address = $("<td>"+info.address['street_address']+"</td>");
+//                            city = $("<td>"+info.address.city+"</td>");
+//                            state = $("<td>"+info.address.state+"</td>");
+//                            zip = $("<td>"+info.address.zip+"</td>");
+//
+//
+//
+//                        var address = $("<td>"+street_address+" "+city+" "+state+" "+zip+"</td>");
+//
+//
+//                        var longitude = $("<td>"+info.longitude+"</td>");
+//                        var latitude = $("<td>"+info.latitude+"</td>");
+//
+//                        name.appendTo(row);
+//                        phone.appendTo(row);
+////                        DOB.appendTo(row);
+////                        company.appendTo(row);
+////                        jobtype.appendTo(row);
+////                        school.appendTo(row);
+////                        gpa.appendTo(row);
+////                        researchinterests.appendTo(row);
+////                        degree.appendTo(row);
+////                        major.appendTo(row);
+////                        gender.appendTo(row);
+////                        nationality.appendTo(row);
+//                        address.appendTo(row);
+//                        //longitude.appendTo(row);
+//                        //latitude.appendTo(row);
+//
+//                        row.appendTo(serverdata);
+//
+//                    });
 
           });
         });
