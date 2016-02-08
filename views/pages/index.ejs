@@ -16,8 +16,9 @@
             $('#containerdiv').show();
             var serverdata = $("#serverdata");
                     serverdata.empty();
+              var json = JSON.parse(data);
 
-                    $.each(data, function(key, info) {
+                    $.each(json, function(key, info) {
                         var row = $("<tr></tr>");
 
                         //alert(key);
