@@ -2,23 +2,135 @@
   <head>
     <title>Simple login</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
     <script>
       $(document).ready(function(){
         var user,pass;
         $("#submit").click(function(){
           user=$("#user").val();
           pass=$("#password").val();
-          $.post("https://webdatacse5335jeet.herokuapp.com/login",{user: user,password: pass}, function(data){
-            alert(data);
+          $.post("https://cse5335-jsp9739.herokuapp.com/login",{user: user,password: pass}, function(data){
+            //alert(data);
+            $('#containerdiv').show();
+            var serverdata = $("#serverdata");
+                    serverdata.empty();
+
+                    $.each(data, function(key, info) {
+                        var row = $("<tr></tr>");
+
+                        //alert(key);
+                        //alert(info);
+                        //alert(JSON.stringify(user));
+
+                        var name = $("<td>"+info.name+"</td>");
+                        var phone = $("<td>"+info.phone+"</td>");
+                        var DOB = $("<td>"+info.DOB+"</td>");
+                        var company = $("<td>"+info.company+"</td>");
+                        var jobtype = $("<td>"+info.jobtype+"</td>");
+                        var school = $("<td>"+info.school+"</td>");
+                        var gpa = $("<td>"+info.gpa+"</td>");
+                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
+                        var degree = $("<td>"+info.degree+"</td>");
+                        var major = $("<td>"+info.major+"</td>");
+                        var gender = $("<td>"+info.gender+"</td>");
+                        var nationality = $("<td>"+info.nationality+"</td>");
+                        var street_address;
+                        var city;
+                        var state;
+                        var zip;
+
+
+                        $.each(info.address, function(key1, add) {
+                            street_address = $("<td>"+add.street_address+"</td>");
+                            city = $("<td>"+add.city+"</td>");
+                            state = $("<td>"+add.state+"</td>");
+                            zip = $("<td>"+add.zip+"</td>");
+
+                        });
+
+                        var address = $("<td>"+street_address+" "+city+" "+state+" "+zip+"</td>");
+
+
+                        var longitude = $("<td>"+info.longitude+"</td>");
+                        var latitude = $("<td>"+info.latitude+"</td>");
+
+                        name.appendTo(row);
+                        phone.appendTo(row);
+                        DOB.appendTo(row);
+                        company.appendTo(row);
+                        jobtype.appendTo(row);
+                        school.appendTo(row);
+                        gpa.appendTo(row);
+                        researchinterests.appendTo(row);
+                        degree.appendTo(row);
+                        major.appendTo(row);
+                        gender.appendTo(row);
+                        nationality.appendTo(row);
+                        address.appendTo(row);
+                        //longitude.appendTo(row);
+                        //latitude.appendTo(row);
+
+                        row.appendTo(serverdata);
+
+                    });
+
           });
         });
       });
     </script>
   </head>
   <body>
-    <h1>Hello people !</h1>
-    <input type="TEXT" id="user" size="40"><br>
-    <input type="password" id="password" size="40"><br>
-    <input type="button" id="submit" value="Submit">
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand bold center">Web Data Management Class !!!</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/">Home</a></li>
+            </ul>
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+  <button type="button" class="btn btn-primary" id="submit" style="margin-top: 70px;margin-left:50px;">Get JSON data from Server</button>
+
+
+<div class="container" id="containerdiv" hidden="true" style="margin-top: 50px;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Data received from Server:</h3>
+        </div>
+
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>DOB</th>
+                    <th>Company</th>
+                    <th>Job Type</th>
+                    <th>School</th>
+                    <th>GPA</th>
+                    <th>Research Interests</th>
+                    <th>Degree</th>
+                    <th>Major</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                    <th>Address</th>
+                </tr>
+                </thead>
+                <tbody id="serverdata">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
   </body>
 </html>
+

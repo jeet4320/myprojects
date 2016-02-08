@@ -11,7 +11,7 @@
         $("#submit").click(function(){
           user=$("#user").val();
           pass=$("#password").val();
-          $.post("https://webdatacse5335jeet.herokuapp.com/login",{user: user,password: pass}, function(data){
+          $.post("https://cse5335-jsp9739.herokuapp.com/login",{user: user,password: pass}, function(data){
             //alert(data);
             $('#containerdiv').show();
             var serverdata = $("#serverdata");
@@ -36,7 +36,23 @@
                         var major = $("<td>"+info.major+"</td>");
                         var gender = $("<td>"+info.gender+"</td>");
                         var nationality = $("<td>"+info.nationality+"</td>");
-                        var address = $("<td>"+info.address+"</td>");
+                        var street_address;
+                        var city;
+                        var state;
+                        var zip;
+
+
+                        $.each(info.address, function(key1, add) {
+                            street_address = $("<td>"+add.street_address+"</td>");
+                            city = $("<td>"+add.city+"</td>");
+                            state = $("<td>"+add.state+"</td>");
+                            zip = $("<td>"+add.zip+"</td>");
+
+                        });
+
+                        var address = $("<td>"+street_address+" "+city+" "+state+" "+zip+"</td>");
+
+
                         var longitude = $("<td>"+info.longitude+"</td>");
                         var latitude = $("<td>"+info.latitude+"</td>");
 
@@ -53,8 +69,8 @@
                         gender.appendTo(row);
                         nationality.appendTo(row);
                         address.appendTo(row);
-                        longitude.appendTo(row);
-                        latitude.appendTo(row);
+                        //longitude.appendTo(row);
+                        //latitude.appendTo(row);
 
                         row.appendTo(serverdata);
 
@@ -96,16 +112,15 @@
                     <th>Phone</th>
                     <th>DOB</th>
                     <th>Company</th>
-                    <th>Job-type</th>
+                    <th>Job Type</th>
                     <th>School</th>
                     <th>GPA</th>
-                    <th>Research interests</th>
+                    <th>Research Interests</th>
                     <th>Degree</th>
                     <th>Major</th>
                     <th>Gender</th>
+                    <th>Nationality</th>
                     <th>Address</th>
-                    <th>Longitude</th>
-                    <th>Latitude</th>
                 </tr>
                 </thead>
                 <tbody id="serverdata">
@@ -116,9 +131,6 @@
     </div>
 </div>
 
-    <h1>Hello people !</h1>
-    <input type="TEXT" id="user" size="40"><br>
-    <input type="password" id="password" size="40"><br>
-
   </body>
 </html>
+

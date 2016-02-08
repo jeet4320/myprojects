@@ -24,11 +24,11 @@ app.post('/login',function(req,res){
   "phone"    : "8171234562",
   "DOB"  : "02/02/1985",
   "company"  : "Intel",
-  "jobtype"  : "full time",
-  "school"  : "University of Texas Arlington",
+  "jobtype"  : "Full time",
+  "school"  : "UTA",
   "gpa"  : 3.6,
   "researchinterests"  : "Big data",
-  "degree"  : "Masters in Computer Science",
+  "degree"  : "MS in Computer Science",
   "major"  : "Computer Science",
   "gender"  : "Male",
   "nationality"  : "Indian",
@@ -45,11 +45,11 @@ app.post('/login',function(req,res){
   "phone"    : "8171234562",
   "DOB"  : "02/02/1985",
   "company"  : "Intel",
-  "jobtype"  : "full time",
-  "school"  : "University of Texas Arlington",
+  "jobtype"  : "Full time",
+  "school"  : "UTA",
   "gpa"  : 3.6,
   "researchinterests"  : "Big data",
-  "degree"  : "Masters in Computer Science",
+  "degree"  : "MS in Computer Science",
   "major"  : "Computer Science",
   "gender"  : "Male",
   "nationality"  : "Indian",
@@ -73,4 +73,5 @@ app.post('/login',function(req,res){
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
 
