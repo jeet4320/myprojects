@@ -2,7 +2,7 @@
 <head>
     <title>Simple login</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVw_3amowkAGa8dHjFx7xNWp1F8DIH98A"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVw_3amowkAGa8dHjFx7xNWp1F8DIH98A"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <style>
@@ -46,7 +46,7 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-                        var longitude = $("<td><a class=\"btn\" id=\"mapbutton\" data-latLng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
+                        var longitude = $("<td><a class=\"btn btn-warning\" id=\"mapbutton\" data-latLng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
                         alert(longitude);
                         var latitude = $("<td>"+info.latitude+"</td>");
 
