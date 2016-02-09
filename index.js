@@ -110,8 +110,6 @@ app.post('/login',function(req,res){
   "latitude": 50.76891
 }];
 
-
-  console.log("User name = "+user_name+", password is "+password);
   res.contentType('application/json');
   res.send(JSON.stringify(jj));
   //  res.end(json);
