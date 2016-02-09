@@ -97,6 +97,26 @@ th {
 
                         row.appendTo(serverdata);
 
+
+           function initialize() {
+
+
+                $( ".map" ).click(function() {
+                  var latLng = jQuery(this).attr("data-latLng");
+                                alert(latLng);
+                    latLng = latLng.split(",");
+                     alert(latLng);
+                    var mapOptions = {
+                        center: new google.maps.LatLng(latLng[0],latLng[1]),
+                        zoom: 8
+                    };
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                });
+
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
                     });
 
                 });
@@ -172,8 +192,11 @@ th {
 
                 </tr>
                 </thead>
-                <tbody id="serverdata" class="table-striped">
+                <tbody class="table-striped">
                 <tr>
+                    <td>
+                        <a class="btn btn-info map" data-latLng="53.488188,-2.373019">Button</a>
+                    </td>
                     <td>
                         <a class="btn btn-info map" data-latLng="53.488188,-2.373019">Button</a>
                     </td>
