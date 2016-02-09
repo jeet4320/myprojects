@@ -70,8 +70,8 @@ app.post('/login',function(req,res){
                     "state": "Texas",
                     "zip": "76013"
                     },
-              "longitude": 53.488188,
-              "latitude": -2.373019
+              "longitude": 6.11499,
+              "latitude": 50.76891
         }
     ]
 };
