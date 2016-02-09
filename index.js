@@ -50,28 +50,6 @@ app.post('/login',function(req,res){
                     },
               "longitude": 53.488188,
               "latitude": -2.373019
-        },
-        {
-              "name"   : "Alice1 Brown1",
-              "phone"    : "8171234562",
-              "DOB"  : "02/02/1985",
-              "company"  : "Intel",
-              "jobtype"  : "Full time",
-              "school"  : "UTA",
-              "gpa"  : 3.6,
-              "researchinterests"  : "Big data",
-              "degree"  : "MS in Computer Science",
-              "major"  : "Computer Science",
-              "gender"  : "Male",
-              "nationality"  : "Indian",
-              "address": {
-                    "street_address": "955 Benge Drive",
-                    "city": "Arlington",
-                    "state": "Texas",
-                    "zip": "76013"
-                    },
-              "longitude": 53.488188,
-              "latitude": -2.373019
         }
     ]
 };
