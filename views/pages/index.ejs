@@ -76,27 +76,24 @@ th {
                 });
             });
 
-            function initialize(latLng) {
-                latLng = latLng.split(",")
-                alert(latLng);
-                var mapOptions = {
-                    center: new google.maps.LatLng(latLng[0],latLng[1]),
-                    zoom: 8
-                };
-                var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+           function initialize() {
+
+
+                $( ".mapbutton" ).click(function() {
+                  var latLng = jQuery(this).attr("data-latLng");
+                                alert(latLng);
+                    latLng = latLng.split(",");
+                     alert(latLng);
+                    var mapOptions = {
+                        center: new google.maps.LatLng(latLng[0],latLng[1]),
+                        zoom: 8
+                    };
+                    var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+                });
+
             }
 
-        $(".mapbutton").click(function(e){
-            alert("het");
-                e.preventDefault();
-                var latLng = jQuery(this).attr("data-latLng");
-                initialize(latLng);
-            alert(latLng);
-        });
-
-
-
-
+            google.maps.event.addDomListener(window, 'load', initialize);
 
         });
     </script>
