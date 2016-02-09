@@ -19,42 +19,7 @@ th {
     <script>
         $(document).ready(function(){
 
-  $( "#jj" ).click(function() {
-                  var latLng = jQuery(this).attr("data-latLng");
-                                alert(latLng);
-                    latLng = latLng.split(",");
-                     alert(latLng);
-                    var mapOptions = {
-                        center: new google.maps.LatLng(latLng[0],latLng[1]),
-                        zoom: 8
-                    };
-                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                });
 
-
-                $( ".jeet" ).click(function() {
-                  var latLng = jQuery(this).attr("data-latLng");
-                                alert(latLng);
-                    latLng = latLng.split(",");
-                     alert(latLng);
-                    var mapOptions = {
-                        center: new google.maps.LatLng(latLng[0],latLng[1]),
-                        zoom: 8
-                    };
-                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                });
-
-                $( ".map" ).click(function() {
-                  var latLng = jQuery(this).attr("data-latLng");
-                                alert(latLng);
-                    latLng = latLng.split(",");
-                     alert(latLng);
-                    var mapOptions = {
-                        center: new google.maps.LatLng(latLng[0],latLng[1]),
-                        zoom: 8
-                    };
-                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                });
 
 
             $("#submit").click(function(){
@@ -71,7 +36,7 @@ th {
                     json = json.students;
 
                     $.each(json, function(key, info) {
-                        var row = $("<tr id=\"jj\"></tr>");
+                        var row = $("<tr></tr>");
 
 
                         var name = $("<td>"+info.name+"</td>");
@@ -86,7 +51,7 @@ th {
                         var major = $("<td>"+info.major+"</td>");
                         var gender = $("<td>"+info.gender+"</td>");
                         var nationality = $("<td>"+info.nationality+"</td>");
-                        var address = $("<td class=\"jeet\">"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
+                        var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
                         var longitude = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
@@ -122,6 +87,32 @@ th {
                     });
 
                 });
+            });
+
+                $( ".map" ).click(function() {
+                  var latLng = jQuery(this).attr("data-latLng");
+                                alert(latLng);
+                    latLng = latLng.split(",");
+                     alert(latLng);
+                    var mapOptions = {
+                        center: new google.maps.LatLng(latLng[0],latLng[1]),
+                        zoom: 8
+                    };
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                });
+
+
+
+            $( document ).on( 'click', '.map', function() {
+               var latLng = jQuery(this).attr("data-latLng");
+                                alert(latLng);
+                    latLng = latLng.split(",");
+                     alert(latLng);
+                    var mapOptions = {
+                        center: new google.maps.LatLng(latLng[0],latLng[1]),
+                        zoom: 8
+                    };
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
             });
 
 
