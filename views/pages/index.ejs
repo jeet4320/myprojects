@@ -13,7 +13,7 @@
   align-self: center;
 }
 th {
-    background-color: #f0ad4e;
+    background-color: #31b0d5;
     color: white;
 }
 </style>
@@ -47,7 +47,7 @@ th {
                         var jobtype = $("<td>"+info.jobtype+"</td>");
                         var school = $("<td>"+info.school+"</td>");
                         var gpa = $("<td>"+info.gpa+"</td>");
-                        var researchinterests = $("<td>"+info.researchinterests+"</td>");
+
                         var degree = $("<td>"+info.degree+"</td>");
                         var major = $("<td>"+info.major+"</td>");
                         var gender = $("<td>"+info.gender+"</td>");
@@ -55,7 +55,7 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-                        var latlng = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
+                        var latlng = $("<td><a class=\"btn btn-warning map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
 
 
 
@@ -69,7 +69,7 @@ th {
                         jobtype.appendTo(row);
                         school.appendTo(row);
                         gpa.appendTo(row);
-                        researchinterests.appendTo(row);
+
                         degree.appendTo(row);
                         major.appendTo(row);
                         gender.appendTo(row);
@@ -143,7 +143,7 @@ th {
                     <th>Job Type</th>
                     <th>School</th>
                     <th>GPA</th>
-                    <th>Research Interests</th>
+
                     <th>Degree</th>
                     <th>Major</th>
                     <th>Gender</th>

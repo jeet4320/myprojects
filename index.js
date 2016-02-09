@@ -37,7 +37,7 @@ app.post('/login',function(req,res){
               "jobtype"  : "Full time",
               "school"  : "UTA",
               "gpa"  : 3.6,
-              
+
               "degree"  : "MS in Computer Science",
               "major"  : "Computer Science",
               "gender"  : "Male",
