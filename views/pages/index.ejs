@@ -46,8 +46,9 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-//                        var longitude = $("<td>"+info.longitude+"</td>");
-//                        var latitude = $("<td>"+info.latitude+"</td>");
+                        var longitude = $("<td><a class=\"button\" data-latLng=\""+info.longitude,info.latitude+"\">GetMap</a></td>");
+                        var latitude = $("<td>"+info.latitude+"</td>");
+
 
                         name.appendTo(row);
                         phone.appendTo(row);
@@ -62,7 +63,7 @@ th {
                         gender.appendTo(row);
                         nationality.appendTo(row);
                         address.appendTo(row);
-                        //longitude.appendTo(row);
+                        longitude.appendTo(row);
                         //latitude.appendTo(row);
 
                         row.appendTo(serverdata);
