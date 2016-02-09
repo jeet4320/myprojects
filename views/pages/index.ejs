@@ -19,6 +19,27 @@ th {
     <script>
         $(document).ready(function(){
 
+
+           function initialize() {
+
+
+                $( ".map" ).click(function() {
+                  var latLng = jQuery(this).attr("data-latLng");
+                                alert(latLng);
+                    latLng = latLng.split(",");
+                     alert(latLng);
+                    var mapOptions = {
+                        center: new google.maps.LatLng(latLng[0],latLng[1]),
+                        zoom: 8
+                    };
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                });
+
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+
             $("#submit").click(function(){
 
                 $.post("https://cse5335-jsp9739.herokuapp.com/login", function(data){
@@ -51,7 +72,7 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-                        var longitude = $("<td><a class=\"btn btn-warning map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
+                        var longitude = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
                         alert(longitude);
                         var latitude = $("<td>"+info.latitude+"</td>");
 
@@ -81,24 +102,6 @@ th {
                 });
             });
 
-           function initialize() {
-
-
-                $( ".map" ).click(function() {
-                  var latLng = jQuery(this).attr("data-latLng");
-                                alert(latLng);
-                    latLng = latLng.split(",");
-                     alert(latLng);
-                    var mapOptions = {
-                        center: new google.maps.LatLng(latLng[0],latLng[1]),
-                        zoom: 8
-                    };
-                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                });
-
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
 
         });
     </script>
@@ -122,13 +125,14 @@ th {
 
 <div class="container" id="containerdiv" hidden="true" style="margin-top: 50px;">
 
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">Data received from Server:</h3>
-        </div>
+   
 
-        <div class="panel-body">
-            <table class="table">
+
+        </div>
+    </div>
+</div>
+
+ <table class="table">
                 <thead class="thead-inverse">
                 <tr>
                     <th>Name</th>
@@ -151,10 +155,6 @@ th {
                 </tbody>
             </table>
 
-
-        </div>
-    </div>
-</div>
 <a class="btn btn-info map" data-latLng="53.488188,-2.373019">Button</a>
 <div class="panel panel-info">
         <div class="panel-heading">
