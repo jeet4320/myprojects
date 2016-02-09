@@ -18,8 +18,6 @@ app.get('/',function(req,res){
 });
 
 app.get('/login',function(req,res){
-  var user_name=req.body.user;
-  var password=req.body.password;
 
     var jj = {
     "students":[{
