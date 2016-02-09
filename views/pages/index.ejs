@@ -22,7 +22,7 @@
             var marker;
             $("#submit").click(function(){
 
-                $.post("https://cse5335-jsp9739.herokuapp.com/login", function(data){
+                $.get("https://cse5335-jsp9739.herokuapp.com/login", function(data){
 
                     $('#containerdiv').show();
                     var serverdata = $("#serverdata");
@@ -84,11 +84,6 @@
                     map: map
                   });
                 marker.setAnimation(google.maps.Animation.BOUNCE);
-
-                setTimeout(function() {
-                    marker.setAnimation(null)
-                }, 4000);
-
             });
 
         });
