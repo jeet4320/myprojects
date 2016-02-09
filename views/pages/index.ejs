@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <style>
-#googlemap {
+
+#map-canvas {
   height: 30em;
   width: 30em;
 }
@@ -50,7 +51,7 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-                        var longitude = $("<td><a class=\"btn btn-warning mapbutton\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
+                        var longitude = $("<td><a class=\"btn btn-warning map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
                         alert(longitude);
                         var latitude = $("<td>"+info.latitude+"</td>");
 
@@ -83,7 +84,7 @@ th {
            function initialize() {
 
 
-                $( ".mapbutton" ).click(function() {
+                $( ".map" ).click(function() {
                   var latLng = jQuery(this).attr("data-latLng");
                                 alert(latLng);
                     latLng = latLng.split(",");
@@ -92,7 +93,7 @@ th {
                         center: new google.maps.LatLng(latLng[0],latLng[1]),
                         zoom: 8
                     };
-                    var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
                 });
 
             }
@@ -154,14 +155,14 @@ th {
         </div>
     </div>
 </div>
-
+<a class="btn btn-info map" data-latLng="53.488188,-2.373019">Button</a>
 <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Google Map:</h3>
         </div>
 
         <div class="panel-body">
-            <div id="googlemap"></div>
+            <div id="map-canvas"></div>
         </div>
     </div>
 
