@@ -76,20 +76,24 @@ th {
                 });
             });
 
-            jQuery(document).on("click", ".button", function(e) {
+        $("#button").click(function(e){
                 e.preventDefault();
                 var latLng = jQuery(this).attr("data-latLng");
                 initialize(latLng);
-            });
+            alert(latLng);
+        });
+
+
 
             function initialize(latLng) {
                 latLng = latLng.split(",")
+                alert(latLng);
                 var mapOptions = {
                     center: new google.maps.LatLng(latLng[0],latLng[1]),
                     zoom: 8
                 };
                 var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
-    }
+            }
 
         });
     </script>
@@ -149,7 +153,7 @@ th {
 
 <div class="panel panel-info">
         <div class="panel-heading">
-            <h3 class="panel-title">Data received from Server:</h3>
+            <h3 class="panel-title">Google Map:</h3>
         </div>
 
         <div class="panel-body">
