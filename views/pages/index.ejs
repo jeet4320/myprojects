@@ -2,7 +2,7 @@
 <head>
     <title>Simple login</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
-
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVw_3amowkAGa8dHjFx7xNWp1F8DIH98A"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <style>
@@ -75,6 +75,22 @@ th {
 
                 });
             });
+
+            jQuery(document).on("click", ".button", function(e) {
+                e.preventDefault();
+                var latLng = jQuery(this).attr("data-latLng");
+                initialize(latLng);
+            });
+
+            function initialize(latLng) {
+                latLng = latLng.split(",")
+                var mapOptions = {
+                    center: new google.maps.LatLng(latLng[0],latLng[1]),
+                    zoom: 8
+                };
+                var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+    }
+
         });
     </script>
 </head>
@@ -130,6 +146,17 @@ th {
         </div>
     </div>
 </div>
+
+<div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Data received from Server:</h3>
+        </div>
+
+        <div class="panel-body">
+            <div id="googlemap"></div>
+        </div>
+    </div>
+
 
 </body>
 </html>
