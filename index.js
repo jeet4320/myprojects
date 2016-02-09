@@ -41,8 +41,8 @@ app.get('/login',function(req,res){
                     "state": "Texas",
                     "zip": "76013"
                     },
-              "longitude": 53.488188,
-              "latitude": -2.373019
+              "longitude": 32.7318409,
+              "latitude": -96.78955078
         },
         {
               "name"   : "Alice1 Brown1",
@@ -63,8 +63,8 @@ app.get('/login',function(req,res){
                     "state": "Texas",
                     "zip": "76013"
                     },
-              "longitude": 6.11499,
-              "latitude": 50.76891
+              "longitude": 40.7143528,
+              "latitude": -74.0059731
         }
     ]
 };
