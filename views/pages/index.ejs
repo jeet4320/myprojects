@@ -54,9 +54,9 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-                        var longitude = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
+                        var latlng = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
 
-                        var latitude = $(" <td><a class=\"btn btn-info map\" id=\"jsp\" data-latLng=\"53.488188,-2.373019\">Button</a></td>");
+
 
 
 
@@ -74,8 +74,8 @@ th {
                         gender.appendTo(row);
                         nationality.appendTo(row);
                         address.appendTo(row);
-                        longitude.appendTo(row);
-                        latitude.appendTo(row);
+                        latlng.appendTo(row);
+
 
                         row.appendTo(serverdata);
 
@@ -148,6 +148,7 @@ th {
                     <th>Gender</th>
                     <th>Nationality</th>
                     <th>Address</th>
+                    <th>Map</th>
                 </tr>
                 </thead>
                 <tbody id="serverdata" class="table-striped">
@@ -158,10 +159,6 @@ th {
 
         </div>
     </div>
-</div>
-
-
-
 
 <div class="panel panel-info">
         <div class="panel-heading">
@@ -172,6 +169,11 @@ th {
             <div id="map-canvas"></div>
         </div>
     </div>
+</div>
+
+
+
+
 
 
 </body>
