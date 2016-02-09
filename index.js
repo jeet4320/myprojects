@@ -17,7 +17,7 @@ app.get('/',function(req,res){
   res.render('pages/index');
 });
 
-app.get('/login',function(req,res){
+app.post('/login',function(req,res){
 
     var jj = {
     "students":[{

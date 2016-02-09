@@ -22,7 +22,7 @@
 var marker;
             $("#submit").click(function(){
 
-                $.get("https://cse5335-jsp9739.herokuapp.com/login", function(data){
+                $.post("https://cse5335-jsp9739.herokuapp.com/login", function(data){
 
                     $('#containerdiv').show();
                     var serverdata = $("#serverdata");
