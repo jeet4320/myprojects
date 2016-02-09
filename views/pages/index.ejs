@@ -20,7 +20,6 @@ th {
         $(document).ready(function(){
 
 
-           function initialize() {
 
 
                 $( ".map" ).click(function() {
@@ -34,10 +33,6 @@ th {
                     };
                     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
                 });
-
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
 
 
             $("#submit").click(function(){
@@ -98,24 +93,9 @@ th {
                         row.appendTo(serverdata);
 
 
-           function initialize() {
 
 
-                $( ".map" ).click(function() {
-                  var latLng = jQuery(this).attr("data-latLng");
-                                alert(latLng);
-                    latLng = latLng.split(",");
-                     alert(latLng);
-                    var mapOptions = {
-                        center: new google.maps.LatLng(latLng[0],latLng[1]),
-                        zoom: 8
-                    };
-                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                });
-
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
+           
 
                     });
 
