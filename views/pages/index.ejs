@@ -46,7 +46,7 @@ th {
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
 
 
-                        var longitude = $("<td><a class=\"btn btn-warning\" id=\"mapbutton\" data-latLng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
+                        var longitude = $("<td><a class=\"btn btn-warning mapbutton\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
                         alert(longitude);
                         var latitude = $("<td>"+info.latitude+"</td>");
 
@@ -76,7 +76,8 @@ th {
                 });
             });
 
-        $("#mapbutton").click(function(e){
+        $(".mapbutton").click(function(e){
+            alert("het");
                 e.preventDefault();
                 var latLng = jQuery(this).attr("data-latLng");
                 initialize(latLng);
