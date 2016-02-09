@@ -19,7 +19,7 @@
     </style>
     <script>
         $(document).ready(function(){
-var marker;
+            var marker;
             $("#submit").click(function(){
 
                 $.post("https://cse5335-jsp9739.herokuapp.com/login", function(data){
@@ -75,16 +75,20 @@ var marker;
                 latLng = latLng.split(",");
                 var mapOptions = {
                     center: new google.maps.LatLng(latLng[0],latLng[1]),
-                    zoom: 8
+                    zoom: 8,
                     mapTypeId:google.maps.MapTypeId.ROADMAP
                 };
                 var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-var marker=new google.maps.Marker({
-  position:myCenter,
-  animation:google.maps.Animation.BOUNCE
-  });
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(latLng[0],latLng[1]),
+                    map: map
+                  });
+                marker.setAnimation(google.maps.Animation.BOUNCE);
 
-marker.setMap(map);
+                setTimeout(function() {
+                    marker.setAnimation(null)
+                }, 4000);
+
             });
 
         });
