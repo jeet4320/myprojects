@@ -21,6 +21,17 @@ th {
 
 
 
+                $( "#jsp" ).click(function() {
+                  var latLng = jQuery(this).attr("data-latLng");
+                                alert(latLng);
+                    latLng = latLng.split(",");
+                     alert(latLng);
+                    var mapOptions = {
+                        center: new google.maps.LatLng(latLng[0],latLng[1]),
+                        zoom: 8
+                    };
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                });
 
                 $( ".map" ).click(function() {
                   var latLng = jQuery(this).attr("data-latLng");
@@ -68,8 +79,8 @@ th {
 
 
                         var longitude = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
-                        alert(longitude);
-                        var latitude = $("<td>"+info.latitude+"</td>");
+
+                        var latitude = $(" <td><a class=\"btn btn-info map\" id=\"jsp\" data-latLng=\"53.488188,-2.373019\">Button</a></td>");
 
 
 
@@ -95,7 +106,7 @@ th {
 
 
 
-           
+
 
                     });
 
