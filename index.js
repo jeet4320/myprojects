@@ -17,16 +17,9 @@ app.get('/',function(req,res){
   res.render('pages/index');
 });
 
-app.post('/login',function(req,res){
+app.get('/login',function(req,res){
   var user_name=req.body.user;
   var password=req.body.password;
-
-    //var myObject = new Object();
-    //myObject.name = "John";
-    //myObject.phone = 12;
-    //myObject.address = {"street_address": "955 Benge Drive","city": "Arlington","state": "Texas", "zip": "76013"};
-    //var myString = JSON.stringify(myObject);
-
 
     var jj = {
     "students":[{

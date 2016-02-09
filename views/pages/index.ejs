@@ -5,32 +5,28 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVw_3amowkAGa8dHjFx7xNWp1F8DIH98A"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-<style>
+    <style>
 
-#map-canvas {
-  height: 30em;
-  width: 30em;
-  margin-left: 350px;
-}
-th {
-    background-color: #8EF19A;
-    color: black;
-}
-</style>
+        #map-canvas {
+            height: 30em;
+            width: 30em;
+            margin-left: 350px;
+        }
+        th {
+            background-color: #8EF19A;
+            color: black;
+        }
+    </style>
     <script>
         $(document).ready(function(){
 
-
-
-
             $("#submit").click(function(){
 
-                $.post("https://cse5335-jsp9739.herokuapp.com/login", function(data){
+                $.get("https://cse5335-jsp9739.herokuapp.com/login", function(data){
 
                     $('#containerdiv').show();
                     var serverdata = $("#serverdata");
                     serverdata.empty();
-
 
                     var json = JSON.stringify(data);
                     json = JSON.parse(json);
@@ -47,20 +43,12 @@ th {
                         var jobtype = $("<td>"+info.jobtype+"</td>");
                         var school = $("<td>"+info.school+"</td>");
                         var gpa = $("<td>"+info.gpa+"</td>");
-
                         var degree = $("<td>"+info.degree+"</td>");
                         var major = $("<td>"+info.major+"</td>");
                         var gender = $("<td>"+info.gender+"</td>");
                         var nationality = $("<td>"+info.nationality+"</td>");
                         var address = $("<td>"+info.address.street_address+" "+info.address.city+" "+info.address.state+" "+info.address.zip+"</td>");
-
-
                         var latlng = $("<td><a class=\"btn btn-warning map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
-
-
-
-
-
 
                         name.appendTo(row);
                         phone.appendTo(row);
@@ -69,7 +57,6 @@ th {
                         jobtype.appendTo(row);
                         school.appendTo(row);
                         gpa.appendTo(row);
-
                         degree.appendTo(row);
                         major.appendTo(row);
                         gender.appendTo(row);
@@ -77,33 +64,24 @@ th {
                         address.appendTo(row);
                         latlng.appendTo(row);
 
-
                         row.appendTo(serverdata);
-
-
-
-
-
 
                     });
 
                 });
             });
 
-
-
             $( document ).on( 'click', '.map', function() {
-               var latLng = jQuery(this).attr("data-latLng");
-                                alert(latLng);
-                    latLng = latLng.split(",");
-                     alert(latLng);
-                    var mapOptions = {
-                        center: new google.maps.LatLng(latLng[0],latLng[1]),
-                        zoom: 8
-                    };
-                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                var latLng = jQuery(this).attr("data-latLng");
+                alert(latLng);
+                latLng = latLng.split(",");
+                alert(latLng);
+                var mapOptions = {
+                    center: new google.maps.LatLng(latLng[0],latLng[1]),
+                    zoom: 8
+                };
+                var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
             });
-
 
         });
     </script>
@@ -161,7 +139,7 @@ th {
         </div>
     </div>
 
-<div class="panel panel-info">
+    <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Google Map:</h3>
         </div>
@@ -171,11 +149,6 @@ th {
         </div>
     </div>
 </div>
-
-
-
-
-
 
 </body>
 </html>
