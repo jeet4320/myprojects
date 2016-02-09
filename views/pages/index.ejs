@@ -74,7 +74,7 @@ th {
 
                         var longitude = $("<td><a class=\"btn btn-info map\" data-latlng=\""+info.longitude+","+info.latitude+"\">GetMap</a></td>");
                         alert(longitude);
-                        var latitude = $("<td><a class=\"btn btn-info map\" data-latLng=\"53.488188,-2.373019\">Button</a></td>");
+                        var latitude = $("<td>"+info.latitude+"</td>");
 
 
 
@@ -125,14 +125,13 @@ th {
 
 <div class="container" id="containerdiv" hidden="true" style="margin-top: 50px;">
 
-
-
-
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Data received from Server:</h3>
         </div>
-    </div>
-</div>
 
- <table class="table">
+        <div class="panel-body">
+            <table class="table">
                 <thead class="thead-inverse">
                 <tr>
                     <th>Name</th>
@@ -155,7 +154,41 @@ th {
                 </tbody>
             </table>
 
-<a class="btn btn-info map" data-latLng="53.488188,-2.373019">Button</a>
+
+        </div>
+    </div>
+</div>
+
+  <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">fgh received from Server:</h3>
+        </div>
+
+        <div class="panel-body">
+              <table class="table">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>fgh</th>
+
+                </tr>
+                </thead>
+                <tbody id="serverdata" class="table-striped">
+                <tr>
+                    <td>
+                        <a class="btn btn-info map" data-latLng="53.488188,-2.373019">Button</a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+
+
+
 <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Google Map:</h3>
